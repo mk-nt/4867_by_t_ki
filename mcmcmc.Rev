@@ -23,12 +23,12 @@ print("  - Created MCMCMC object")
 
 checkFreq = 100
 
-if (fileExists("4867_by_t_ki_run_1_chain_0.ckp")) {
-  print("  - Initializing from checkpoint")
-  mymc3.initializeFromCheckpoint(ckpFile)
-} else {
+#if (fileExists("4867_by_t_ki_run_1_chain_0.ckp")) {
+#  print("  - Initializing from checkpoint")
+#  mymc3.initializeFromCheckpoint(ckpFile)
+#} else {
   mymc3.burnin(generations = 3000, tuningInterval = checkFreq * 3)
-}
+#}
 
 stopping_rules[1] = srMaxTime(71, "hours")
 # Overshoot ESS slightly as calculations may differ
